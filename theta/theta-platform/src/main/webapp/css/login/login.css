@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+	.content-center
+    {
+        text-align:center;
+    }
+    .content-left
+    {
+    	text-align:left;
+    }
+    .div
+    {
+        margin:0 auto;
+        width:400px;
+        height:100px;
+        border:1px solid #F00
+     }
+     .mid-content
+     {
+        width: 300px;
+        margin-top: 150px;
+     }
+     .auth-form-body
+     {
+        padding: 20px;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #d8dee2;
+        border-radius: 8px;
+     }
+     .mt-3
+     {
+        margin-top: 16px !important;
+     }
+     .label-link
+     {
+        border: 1px solid transparent;
+        float: right;
+        font-size: 12px;
+     }
+     .input-block
+     {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+     }
+     .create-account-callout
+     {
+        padding: 15px 20px;
+        text-align: center;
+        border: 1px solid #d8dee2;
+        border-radius: 5px;
+     }
+     .mid-font-family
+     {
+        font-size: 12px !important;
+        line-height: 1.5;
+        color: #24292e;
+     }
+     .navbar-inverse
+     {
+     	background-color: #cad8da !important;
+        border-color: #cad8da;
+     }

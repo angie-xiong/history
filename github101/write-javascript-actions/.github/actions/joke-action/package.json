@@ -1,0 +1,18 @@
+{
+  "name": "joke-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.8.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "tunnel": "^0.0.6"
+  }
+}

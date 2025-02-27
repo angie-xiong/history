@@ -1,0 +1,40 @@
+name: test-library
+on:
+  push
+
+jobs:
+#   dependabot-approve:
+#     if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Detect that the PR author is dependabot and auto approve
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Dependabot auto approve and merge once build is clean
+#         env:
+#           GH_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+#         run: |
+#           echo "PR Number: ${{ github.event.pull_request.number }}"
+#           gh pr review ${{ github.event.pull_request.number }} --approve -b '@dependabot squash and merge'
+
+  build:
+    env:
+      BUILD_PYTHON_VERSION: '3.8'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.BUILD_PYTHON_VERSION }}
+          cache: poetry
+      - name: Install dependencies
+        run: |
+          poetry install
+        
+      - name: Run linting
+        run: |
+          poetry run python -m pylint ./test_dependabot

@@ -1,0 +1,3 @@
+[submodule "submodules/github-action-child-module"]
+	path = submodules/github-action-child-module
+	url = https://github.com/angiexiong/github-action-child-module

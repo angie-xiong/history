@@ -1,0 +1,25 @@
+version: 2
+registries:
+  ax-pypi:
+    type: python-index
+    url: https://test.pypi.org/simple/
+    username: ${{ secrets.HTTP_BASIC_PYPI_USERNAME }}
+    password: ${{ secrets.HTTP_BASIC_PYPI_PASSWORD }}
+    replaces-base: false
+
+updates:
+  # Handles Poetry
+  - package-ecosystem: "pip"
+    directory: "/"
+    insecure-external-code-execution: allow  # Required to allow dependabot to update from private pip repos
+    registries:
+      - ax-pypi
+    schedule:
+      interval: "daily"
+      time: "22:00"
+    allow:
+      - dependency-name: "*"
+        dependency-type: "all"
+    labels:
+      - "dependabot: pip"
+      - "dependabot: version-bumped"

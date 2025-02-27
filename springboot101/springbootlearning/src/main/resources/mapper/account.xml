@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.IAccountMapper">
+
+	<select id="findAccountList" resultType="com.example.demo.entity.Account">
+	select id,name,money from account
+	</select>
+	
+	<select id="getAccountById" resultType="com.example.demo.entity.Account">
+		select id,name,money from
+		account where id=#{id}
+	</select>
+
+	<delete id="delete">
+		delete from account where id=#{id}
+	</delete>
+
+	<insert id="add">
+		insert into account(id,name,money) values(#{id},#{name},#{money})
+	</insert>
+
+	<update id="update">
+		update account set
+		<if test="name!=null and name!=''">
+			name=#{name}
+		</if>
+		<if test="money!=null">
+			,money=#{money}
+		</if>
+		where id=#{id}
+	</update>
+	
+</mapper>
